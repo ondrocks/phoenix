@@ -1,40 +1,27 @@
-Express & ES6 REST API Boilerplate
+Phoenix
 ==================================
 
-[![bitHound Score](https://www.bithound.io/github/developit/express-es6-rest-api/badges/score.svg)](https://www.bithound.io/github/developit/express-es6-rest-api)
+Acts as a delegator for separately deployed apps. It proxies them by referencing
+a configured mapping between app name and absolute URL where the app is deployed.
 
-This is a straightforward boilerplate for building REST APIs with ES6 and Express.
+### Usage
 
-- ES6 support via [babel](https://babeljs.io)
-- REST resources as middleware via [resource-router-middleware](https://github.com/developit/resource-router-middleware)
-- CORS support via [cors](https://github.com/troygoode/node-cors)
-- Body Parsing via [body-parser](https://github.com/expressjs/body-parser)
+Modify `src/config.json` apps-map property.
 
-> Tip: If you are using [Mongoose](https://github.com/Automattic/mongoose), you can automatically expose your Models as REST resources using [restful-mongoose](https://git.io/restful-mongoose).
-
-Getting Started
----------------
-
-```sh
-# clone it
-git clone git@github.com:developit/express-es6-rest-api.git
-cd express-es6-rest-api
-
-# Make it your own
-rm -rf .git && git init && npm init
-
-# Install dependencies
-npm install
-
-# Start development live-reload server
-PORT=8080 npm run dev
-
-# Start production server:
-PORT=8080 npm start
+E.g.
 ```
+"apps-map": {
+  "invoice-generator": {
+    "url": "https://tg-invoice-generator.herokuapp.com",
+    "rails": false
+  },
+  "line-sheet-generator": {
+    "url": "https://morning-hamlet-88978.herokuapp.com",
+    "rails": true
+  }
+}
+```
+tells the app to have https://tools.tradegecko.com/invoice-generator proxy https://tg-invoice-generator.herokuapp.com
+and https://tools.tradegecko.com/line-sheet-generator-generator proxy https://morning-hamlet-88978.herokuapp.com
 
-
-License
--------
-
-MIT
+SEO FTW!
