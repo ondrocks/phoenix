@@ -1,0 +1,15 @@
+{
+	"port": 8080,
+	"bodyLimit": "100kb",
+	"corsHeaders": ["Link"],
+	"apps-map": {
+		"invoice-generator": {
+	    "url": "https://tg-invoice-generator.herokuapp.com",
+	    "rails": false
+	  },
+	  "line-sheet-generator": {
+	    "url": "https://morning-hamlet-88978.herokuapp.com",
+	    "rails": true
+	  }
+	}
+}
