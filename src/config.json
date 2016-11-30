@@ -10,6 +10,10 @@
 	  "line-sheet-generator": {
 	    "url": "https://morning-hamlet-88978.herokuapp.com",
 	    "rails": true
-	  }
+	  },
+		"inventory-health-check": {
+			"url": "https://yiweiang.github.io/healthcheck/",
+			"rails": false
+		}
 	}
 }
